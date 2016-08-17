@@ -1,0 +1,14 @@
+{
+  "name": "Hello world application",
+  "availability": "PRIVATE",
+  "contextPath": "helloapp",
+  "key": "helloworld-appkey",
+  "resourcesUrl": "https://bitbucket.org/USER/REPO/raw/master/build",
+  "resourcesUsername": "",
+  "type": "HOSTED",
+  "imports": [
+    "core/c8yBranding",
+    "helloapp/hello"
+  ],
+  "noAppSwitcher": false
+}

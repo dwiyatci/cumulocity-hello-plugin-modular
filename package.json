@@ -1,0 +1,42 @@
+{
+  "name": "cumulocity-hello-plugin-modular",
+  "version": "1.0.0",
+  "description": "A boilerplate to start writing Cumulocity UI plugin with a taste of modular structure",
+  "keywords": [
+    "cumulocity",
+    "m2m",
+    "examples",
+    "demo",
+    "boilerplate",
+    "cumulocity ui plugin",
+    "cumulocity modular"
+  ],
+  "homepage": "https://github.com/dwiyatci/cumulocity-hello-plugin-modular",
+  "bugs": "https://github.com/dwiyatci/cumulocity-hello-plugin-modular/issues",
+  "license": "MIT",
+  "author": "Glenn Dwiyatcita <glenn.dwiyatcita@cumulocity.com> (https://tiny.cc/dwiyatci)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwiyatci/cumulocity-hello-plugin-modular.git"
+  },
+  "scripts": {
+    "install:clean": "npm run clean && npm i",
+    "clean": "rimraf node_modules",
+    "start": "grunt server",
+    "registerApp": "grunt appRegister",
+    "registerApp:noImports": "grunt appRegister:noImports",
+    "registerAllPlugin": "grunt pluginRegisterAll"
+  },
+  "dependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-copy": "0.5.0",
+    "grunt-contrib-cssmin": "0.9.0",
+    "grunt-contrib-less": "0.11.1",
+    "grunt-contrib-uglify": "0.4.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-angular-templates": "0.5.5",
+    "grunt-cumulocity-ui-tasks": "1.1.4"
+  }
+}

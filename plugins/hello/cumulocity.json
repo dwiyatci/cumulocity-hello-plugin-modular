@@ -1,0 +1,20 @@
+{
+  "name": "Hello world plugin testing",
+  "description": "Simple hello world plugin",
+  "category": "",
+  "gallery": [],
+  "list": true,
+  "ngModules": [
+    "helloapp.hello"
+  ],
+  "js": [
+    "hello.module.js",
+    "hello.config.js",
+    "hello.controller.js",
+    "hello.fiddle.js"
+  ],
+  "imports": [],
+  "css": [],
+  "less": [],
+  "copy": []
+}
