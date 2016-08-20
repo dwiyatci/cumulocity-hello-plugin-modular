@@ -3,3 +3,4 @@
 .idea
 .cumulocity
 node_modules
+npm-debug.log
