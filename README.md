@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/cumulocity-hello-plugin-modular.svg)](https://www.npmjs.com/package/cumulocity-hello-plugin-modular)
 [![downloads](https://img.shields.io/npm/dt/cumulocity-hello-plugin-modular.svg)](http://npm-stat.com/charts.html?package=cumulocity-hello-plugin-modular)
-[![WTFPL License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/dwiyatci/cumulocity-hello-plugin-modular/master/LICENSE.txt)
+[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/dwiyatci/cumulocity-hello-plugin-modular/master/LICENSE.txt)
 
 A boilerplate to start writing Cumulocity UI plugin with a taste of [modular](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure) structure.
 
