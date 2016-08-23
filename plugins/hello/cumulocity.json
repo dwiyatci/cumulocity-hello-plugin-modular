@@ -16,5 +16,7 @@
   "imports": [],
   "css": [],
   "less": [],
-  "copy": []
+  "copy": [
+    "hello.html"
+  ]
 }
