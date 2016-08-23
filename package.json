@@ -25,7 +25,8 @@
     "start": "grunt server",
     "registerApp": "grunt appRegister",
     "registerApp:noImports": "grunt appRegister:noImports",
-    "registerAllPlugin": "grunt pluginRegisterAll"
+    "registerAllPlugin": "grunt pluginRegisterAll",
+    "build": "grunt build"
   },
   "devDependencies": {
     "grunt": "0.4.5",
