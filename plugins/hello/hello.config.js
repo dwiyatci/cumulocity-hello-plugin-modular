@@ -20,7 +20,7 @@
     });
 
     c8yViewsProvider.when('/hello', {
-      templateUrl: ':::PLUGIN_PATH:::/hello.html',
+      templateUrl: ':::PLUGIN_PATH:::/views/hello.html',
       controller: 'HelloController',
       controllerAs: 'vm'
     });
