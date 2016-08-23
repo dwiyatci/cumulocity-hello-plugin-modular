@@ -3,7 +3,7 @@
   "availability": "PRIVATE",
   "contextPath": "helloapp",
   "key": "helloworld-appkey",
-  "resourcesUrl": "https://bitbucket.org/USER/REPO/raw/master/build",
+  "resourcesUrl": "https://cdn.rawgit.com/dwiyatci/cumulocity-hello-plugin-modular/master/build",
   "resourcesUsername": "",
   "type": "HOSTED",
   "imports": [
