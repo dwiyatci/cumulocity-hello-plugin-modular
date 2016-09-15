@@ -1,6 +1,6 @@
 {
   "name": "cumulocity-hello-plugin-modular",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A boilerplate to start writing Cumulocity UI plugin with a taste of modular structure",
   "keywords": [
     "cumulocity",
