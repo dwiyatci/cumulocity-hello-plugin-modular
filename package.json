@@ -23,9 +23,10 @@
     "install:clean": "npm run clean && npm i",
     "clean": "rimraf node_modules",
     "start": "grunt server",
-    "registerApp": "grunt appRegister",
-    "registerApp:noImports": "grunt appRegister:noImports",
+    "reregisterApp": "npm run registerAllPlugin && npm run registerApp",
     "registerAllPlugin": "grunt pluginRegisterAll",
+    "registerApp:noImports": "grunt appRegister:noImports",
+    "registerApp": "grunt appRegister",
     "build": "grunt build"
   },
   "devDependencies": {
