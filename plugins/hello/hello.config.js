@@ -9,9 +9,15 @@
     .module('helloapp.hello')
     .config(configure);
 
-  configure.$inject = ['c8yNavigatorProvider', 'c8yViewsProvider'];
+  configure.$inject = [
+    'c8yNavigatorProvider',
+    'c8yViewsProvider'
+  ];
 
-  function configure(c8yNavigatorProvider, c8yViewsProvider) {
+  function configure(
+    c8yNavigatorProvider,
+    c8yViewsProvider
+  ) {
     c8yNavigatorProvider.addNavigation({
       name: 'hello',
       icon: 'cube',

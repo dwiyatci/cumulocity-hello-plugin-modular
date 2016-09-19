@@ -9,9 +9,13 @@
     .module('helloapp.hello')
     .run(runBlock);
 
-  runBlock.$inject = ['c8ySystem'];
+  runBlock.$inject = [
+    'c8ySystem'
+  ];
 
-  function runBlock(c8ySystem) {
+  function runBlock(
+    c8ySystem
+  ) {
     c8ySystem
       .getUIVersion()
       .then(function (version) {
@@ -19,5 +23,6 @@
       });
 
     // Put your fiddle code here.
+    console.log('hello, world');
   }
 }());
