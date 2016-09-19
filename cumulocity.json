@@ -5,7 +5,9 @@
   "key": "helloworld-appkey",
   "resourcesUrl": "https://cdn.rawgit.com/dwiyatci/cumulocity-hello-plugin-modular/master/build",
   "resourcesUsername": "",
+  "resourcesPassword": "",
   "type": "HOSTED",
+  "tabsHorizontal": false,
   "imports": [
     "core/c8yBranding",
     "helloapp/hello"

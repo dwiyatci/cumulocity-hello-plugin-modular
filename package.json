@@ -20,15 +20,15 @@
     "url": "https://github.com/dwiyatci/cumulocity-hello-plugin-modular.git"
   },
   "scripts": {
-    "install:clean": "npm run clean && npm i",
-    "clean": "rimraf node_modules",
+    "install:clean": "rimraf node_modules && npm i",
     "start": "grunt server",
     "smartlyRegisterApp": "npm run reregisterApp || (npm run registerApp:noImports && npm run reregisterApp)",
     "reregisterApp": "npm run registerAllPlugin && npm run registerApp",
     "registerAllPlugin": "grunt pluginRegisterAll",
     "registerApp": "grunt appRegister",
     "registerApp:noImports": "grunt appRegister:noImports",
-    "build": "rimraf build && grunt build"
+    "build": "npm run clean && grunt build",
+    "clean": "rimraf build"
   },
   "devDependencies": {
     "grunt": "0.4.5",
