@@ -1,1 +1,0 @@
-{"name":"Hello world plugin testing","description":"Simple hello world plugin","category":"Boilerplates","list":true,"ngModules":["helloapp.hello"],"js":["main.js"],"imports":[],"css":[],"version":"1.0.6","compatibility":{"app":"helloapp","contextPath":"hello","rootContextPath":"helloapp/hello"},"contextPath":"helloapp_hello"}

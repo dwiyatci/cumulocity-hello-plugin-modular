@@ -1,1 +1,0 @@
-{"name":"Hello world application","availability":"PRIVATE","contextPath":"helloapp","key":"helloapp-application-key","tabsHorizontal":false,"imports":["core","c8ydata","core_c8yBranding","helloapp_hello"],"noAppSwitcher":false,"_webpaas":true}
