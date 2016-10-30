@@ -1,0 +1,86 @@
+/**
+ * Expected rule format:
+ *
+ {
+    "to": "+48 543 43 322",
+    "text": "New #{severity} alarm has been received from #{source.name}. Alarm text is: \"#{text}\"."
+ }
+ */
+
+@Description("rule input")
+@Name("sms_on_alarm_input")
+@Resilient
+create schema Sms_On_Alarm_Input_${ruleId} (
+	alarm Alarm,
+	step integer,
+	rule Map
+);
+
+@Description("rule output")
+@Name("sms_on_alarm_output")
+@Resilient
+create schema Sms_On_Alarm_Output_${ruleId} (
+	alarm Alarm,
+	step integer,
+	success boolean
+);
+
+@Resilient
+create schema SMS_InputData_1_${ruleId} (
+	alarm Alarm,
+	rule Map,
+	step integer
+);
+
+@Name("sms_on_alarm_start")
+@Resilient
+insert into SMS_InputData_1_${ruleId}
+select
+	alarm as alarm,
+	rule as rule,
+	step as step
+from
+	Sms_On_Alarm_Input_${ruleId};
+
+@Resilient
+create schema SMS_InputData_${ruleId} (
+	alarm Alarm,
+	source ManagedObject,
+    to String,
+	text String,
+	step integer
+);
+
+@Resilient
+expression String js:ensureLength(text) [
+	text.substring(0,160);
+]
+insert into SMS_InputData_${ruleId}
+select
+	alarm as alarm,
+	findManagedObjectById(alarm.source.value) as source,
+	getString(rule, "to") as to,
+	ensureLength(getString(rule, "text")) as text,
+	step as step
+from
+	SMS_InputData_1_${ruleId};
+
+@Name("SendSMS")
+@Resilient
+insert into SendSms
+select
+	replaceAllPlaceholders(inputData.text, alarm) as text,
+	inputData.to as receiver,
+	alarm.source.value as deviceId
+from
+	SMS_InputData_${ruleId} inputData;
+
+@Name("prepare_sms_on_alarm_output")
+@Resilient
+insert into Sms_On_Alarm_Output_${ruleId}
+select
+	alarm as alarm,
+	step as step,
+	true as success
+from
+	SMS_InputData_${ruleId} inputData;

@@ -1,0 +1,92 @@
+create variable string log_event_type_${ruleId} = "c8y_SpeechLog";
+
+@Description("rule input")
+@Name("t2s_on_alarm_Input")
+@Resilient
+create schema T2S_On_Alarm_Input_${ruleId} (
+	alarm Alarm,
+	rule Map,
+	step integer
+);
+
+@Resilient
+create schema SpeechLog_${ruleId} (
+	alarmId String,
+	status String
+);
+
+@Priority(0)
+@Resilient
+create context AlarmContext_${ruleId}
+  initiated by distinct(alarm.id.value) T2S_On_Alarm_Input_${ruleId} as alarmEvent
+  terminated by SpeechLog_${ruleId}(alarmId = alarmEvent.alarm.id.value);
+
+@Description("rule output")
+@Name("t2s_on_alarm_output")
+@Resilient
+create schema T2S_On_Alarm_Output_${ruleId} (
+	alarm Alarm,
+	success boolean,
+	step integer
+);
+
+@Resilient
+create schema InputData_${ruleId} (
+	alarm Alarm,
+    phoneNumber String,
+    textToSpeech String,
+    attempts Number,
+    timeout Number,
+    questionText String,
+    acknowledgeButton Number
+);
+
+@Name("AssembleSpeechDataFromConfiguration")
+@Resilient
+insert into InputData_${ruleId}
+select
+	alarm as alarm,
+	getString(rule, "to") as phoneNumber,
+	getString(rule, "text") as textToSpeech,
+	getNumber(rule, "retries") as attempts,
+	getNumber(rule, "timeout") as timeout,
+	getString(rule, "acknowledgeText") as questionText,
+	getNumber(rule, "acknowledgeNumber") as acknowledgeButton
+from
+	T2S_On_Alarm_Input_${ruleId};
+
+@Name("SendSpeech")
+@Resilient
+insert into SendSpeech
+select
+	inputData.phoneNumber as phoneNumber,
+	replaceAllPlaceholders(inputData.textToSpeech, inputData.alarm) as textToSpeech,
+	inputData.alarm.source.value as deviceId,
+	cast(inputData.attempts?, long) as attempts,
+	cast(inputData.timeout?, long) as timeout,
+	inputData.alarm.id.value as alarmId,
+	inputData.questionText as questionText,
+	cast(inputData.acknowledgeButton?, long) as acknowledgeButton
+from
+	InputData_${ruleId} inputData;
+
+@Resilient
+insert into SpeechLog_${ruleId}
+select
+	getString(e, "alarmId") as alarmId,
+	getString(e, "status") as status
+from
+	EventCreated e
+where
+	e.type = log_event_type_${ruleId};
+
+@Priority(1)
+@Name("handle Log Event")
+@Resilient
+context AlarmContext_${ruleId}
+insert into T2S_On_Alarm_Output_${ruleId}
+select
+	context.alarmEvent.alarm as alarm,
+	context.alarmEvent.step as step,
+	getString(e, "status") = "SUCCESSFUL" as success
+from SpeechLog_${ruleId} e;

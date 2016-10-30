@@ -1,0 +1,23 @@
+create variable ManagedObject rule_${ruleId} = findManagedObjectById("${ruleId}");
+create variable string minute_${ruleId} = getString(rule_${ruleId}, "config.minute");
+create variable string hour_${ruleId} = getString(rule_${ruleId}, "config.hour");
+create variable string dayOfMonth_${ruleId} = getString(rule_${ruleId}, "config.day");
+create variable string month_${ruleId} = getString(rule_${ruleId}, "config.month");
+create variable string dayOfWeek_${ruleId} = getString(rule_${ruleId}, "config.weekday");
+
+@Name("SendDashboard")
+insert into SendDashboard
+select
+ getString(rule_${ruleId}, "config.url") as dashboardUrl,
+ getString(rule_${ruleId}, "config.subject") as subject,
+ getString(rule_${ruleId}, "config.text") as text,
+ getString(rule_${ruleId}, "config.replyTo") as replyTo,
+ getString(rule_${ruleId}, "config.to") as receiver,
+ getString(rule_${ruleId}, "config.cc") as cc,
+ getString(rule_${ruleId}, "config.bcc") as bcc
+from
+ pattern [every timer:at(toNumberSetParameter(minute_${ruleId}),
+ toNumberSetParameter(hour_${ruleId}),
+ toNumberSetParameter(dayOfMonth_${ruleId}),
+ toNumberSetParameter(month_${ruleId}),
+ toNumberSetParameter(dayOfWeek_${ruleId}))];

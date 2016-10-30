@@ -1,0 +1,69 @@
+/* the id of MO with rule's configuration: ${ruleId}*/
+
+@Description("rule input")
+@Name("OnAlarmSendSms_Input")
+create schema OnAlarmSendSms_Input_${ruleId} (
+	alarm Alarm,
+	step integer,
+	rule Map
+);
+
+@Name("GetRuleConfiguration")
+insert into OnAlarmSendSms_Input_${ruleId}
+select
+	alarmCreated.alarm as alarm,
+	(findManagedObjectById("${ruleId}")).getAttrs() as rule,
+	0 as step
+from
+	AlarmCreated alarmCreated;
+
+create schema InputData_1_${ruleId} (
+	alarm Alarm,
+	rule Map,
+	step integer
+);
+
+@Name("ValidateAlarm")
+insert into InputData_1_${ruleId}
+select
+	alarm as alarm,
+	rule as rule,
+	step as step
+from
+	OnAlarmSendSms_Input_${ruleId}
+where
+	not inMaintenanceMode(alarm.source)
+	and getString(rule, "config.alarmType").split(",").anyOf(v => alarm.type = v.trim())
+	and (alarm.source.value in (getList(rule, "enabledSources"))
+		or (getList(rule, "enabledSources") is null and alarm.source.value not in (getList(rule, "disabledSources"))));
+
+create schema InputData_${ruleId} (
+	alarm Alarm,
+	source ManagedObject,
+    to String,
+	text String,
+	step integer
+);
+
+@Name("AssembleDataFromConfiguration")
+expression String js:ensureLength(text) [
+	text.substring(0,160);
+]
+insert into InputData_${ruleId}
+select
+	alarm as alarm,
+	findManagedObjectById(alarm.source.value) as source,
+	getString(rule, "config.to") as to,
+	ensureLength(getString(rule, "config.text")) as text,
+	step as step
+from
+	InputData_1_${ruleId};
+
+@Name("SendSms")
+insert into SendSms
+select
+	replaceAllPlaceholders(inputData.text, alarm) as text,
+	inputData.to as receiver,
+	alarm.source.value as deviceId
+from
+	InputData_${ruleId} inputData;

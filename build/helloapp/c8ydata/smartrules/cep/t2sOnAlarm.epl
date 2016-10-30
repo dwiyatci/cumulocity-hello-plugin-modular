@@ -1,0 +1,81 @@
+/**
+ * Assume rule format:
+ *
+ {
+	"disabledSources",
+    "enabledSources",
+    "config": {
+        "alarmType",
+        "to": "+48 543 43 322",
+        "text": "New #{severity} alarm has been received from #{source.name}. Alarm text is: \"#{text}\".",
+        "retries": int,
+        "timeout": //in minutes,
+        "questionText": "Do you want change alarm status to acknowledge - press 5",
+		"acknowledgeButton: 5
+    }
+}
+ *
+ */
+
+create schema InputData_0_${ruleId} (
+	alarm Alarm,
+	rule Map
+);
+
+@Name("GetRuleConfiguration")
+insert into InputData_0_${ruleId}
+select
+	alarmCreated.alarm as alarm,
+	(findManagedObjectById("${ruleId}")).getAttrs() as rule
+from
+	AlarmCreated alarmCreated;
+
+@Name("ValidateAlarm")
+insert into InputData_1_${ruleId}
+select
+	alarm as alarm,
+	rule as rule
+from
+	InputData_0_${ruleId}
+where
+	not inMaintenanceMode(alarm.source)
+	and getString(rule, "config.alarmType").split(",").anyOf(v => alarm.type = v.trim())
+	and (alarm.source.value in (getList(rule, "enabledSources"))
+		or (getList(rule, "enabledSources") is null and alarm.source.value not in (getList(rule, "disabledSources"))));
+
+create schema InputData_${ruleId} (
+	alarm Alarm,
+    phoneNumber String,
+    textToSpeech String,
+    attempts Number,
+    timeout Number,
+    questionText String,
+    acknowledgeButton Number
+);
+
+@Name("AssembleDataFromConfiguration")
+insert into InputData_${ruleId}
+select
+	alarm as alarm,
+	getString(rule, "config.to") as phoneNumber,
+	getString(rule, "config.text") as textToSpeech,
+	getNumber(rule, "config.retries") as attempts,
+	getNumber(rule, "config.timeout") as timeout,
+	getString(rule, "config.acknowledgeText") as questionText,
+	getNumber(rule, "config.acknowledgeNumber") as acknowledgeButton
+from
+	InputData_1_${ruleId};
+
+@Name("SendSpeech")
+insert into SendSpeech
+select
+	inputData.phoneNumber as phoneNumber,
+	replaceAllPlaceholders(inputData.textToSpeech, inputData.alarm) as textToSpeech,
+	inputData.alarm.source.value as deviceId,
+	cast(inputData.attempts?, long) as attempts,
+	cast(inputData.timeout?, long) as timeout,
+	inputData.alarm.id.value as alarmId,
+	inputData.questionText as questionText,
+	cast(inputData.acknowledgeButton?, long) as acknowledgeButton
+from
+	InputData_${ruleId} inputData;

@@ -2,7 +2,7 @@
   "name": "Hello world application",
   "availability": "PRIVATE",
   "contextPath": "helloapp",
-  "key": "helloworld-appkey",
+  "key": "helloapp-application-key",
   "resourcesUrl": "https://cdn.rawgit.com/dwiyatci/cumulocity-hello-plugin-modular/master/build",
   "resourcesUsername": "",
   "resourcesPassword": "",

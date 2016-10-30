@@ -1,0 +1,105 @@
+/* the id of MO with rule's configuration: ${ruleId}*/
+
+@Resilient
+create schema GeofenceInputData_${ruleId} (
+	eventCreated EventCreated,
+	config GeofenceRuleConfig,
+    rule ManagedObject,
+	lat BigDecimal,
+	lng BigDecimal
+);
+
+@Resilient
+create schema LocatedPosition_${ruleId} (
+    event Event,
+    source_id String,
+    inside_fence boolean,
+    config GeofenceRuleConfig,
+    rule ManagedObject
+);
+
+@Resilient
+create schema PositionPair_${ruleId} (
+	firstPos LocatedPosition_${ruleId},
+	secondPos LocatedPosition_${ruleId}
+);
+
+@Resilient
+create context LocationEventContext${ruleId}
+	partition by source_id from LocatedPosition_${ruleId};
+
+@Name("GetRuleConfiguration")
+@Resilient
+insert into GeofenceInputData_${ruleId}
+select
+    evt as eventCreated,
+    getGeofenceRuleConfig ("${ruleId}") as config,
+    findManagedObjectById("${ruleId}") as rule,
+    getNumber(evt, "c8y_Position.lat") as lat,
+    getNumber(evt, "c8y_Position.lng") as lng
+from EventCreated as evt;
+
+@Name("ValidateEvent")
+@Resilient
+insert into LocatedPosition_${ruleId}
+select
+    inputData.eventCreated.event as event,
+    inputData.eventCreated.event.source.value as source_id,
+    inputData.config as config,
+    inputData.rule as rule,
+    isInsideFence(
+        inputData.lat,
+        inputData.lng,
+        getList(inputData.config, "geofence")) as inside_fence
+from GeofenceInputData_${ruleId} as inputData
+where
+	config is not null
+	and (
+		inputData.eventCreated.event.source.value in (config.enabledSources)
+		or (config.enabledSources is null and inputData.eventCreated.event.source.value not in (config.disabledSources))
+	);
+
+@Name("TakeLastTwoPositionEvents")
+@Resilient
+context LocationEventContext${ruleId}
+insert into PositionPair_${ruleId}
+select
+	first(*) as firstPos,
+	last(*) as secondPos
+from LocatedPosition_${ruleId}.win:length(2);
+
+@Name("SendEmail")
+@Resilient
+insert into SendEmail
+select
+	replaceAllPlaceholders(getString(pair.firstPos.rule, "config.subject"), pair.firstPos.event) as subject,
+	replaceAllPlaceholders(getString(pair.firstPos.rule, "config.text"), pair.firstPos.event) as text,
+	getString(pair.firstPos.rule, "config.replyTo") as replyTo,
+	getString(pair.firstPos.rule, "config.to") as receiver,
+	getString(pair.firstPos.rule, "config.cc") as cc,
+	getString(pair.firstPos.rule, "config.bcc") as bcc
+from PositionPair_${ruleId} as pair
+where (pair.secondPos.inside_fence = false) and (pair.firstPos.inside_fence = true)
+and (
+	pair.firstPos.config.triggerAlarmOn is null
+	or pair.firstPos.config.triggerAlarmOn = "leaving"
+	or pair.firstPos.config.triggerAlarmOn = "both"
+);
+
+@Name("SendEmailEntering")
+@Resilient
+insert into SendEmail
+select
+	replaceAllPlaceholders(getString(pair.firstPos.rule, "config.subject"), pair.firstPos.event) as subject,
+	replaceAllPlaceholders(getString(pair.firstPos.rule, "config.text"), pair.firstPos.event) as text,
+	getString(pair.firstPos.rule, "config.replyTo") as replyTo,
+	getString(pair.firstPos.rule, "config.to") as receiver,
+	getString(pair.firstPos.rule, "config.cc") as cc,
+	getString(pair.firstPos.rule, "config.bcc") as bcc
+from PositionPair_${ruleId} as pair
+where (pair.secondPos.inside_fence = true) and (pair.firstPos.inside_fence = false)
+and (
+	pair.firstPos.config.triggerAlarmOn = "entering"
+	or pair.firstPos.config.triggerAlarmOn = "both"
+);
+

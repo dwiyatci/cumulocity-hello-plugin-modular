@@ -1,0 +1,104 @@
+/* the id of MO with rule's configuration: ${ruleId}*/
+
+@Resilient
+create variable ManagedObject rule_${ruleId} = findManagedObjectById("${ruleId}");
+
+@Resilient
+create variable Long output_interval_${ruleId} = cast(getNumber(rule_${ruleId}, "config.timeInterval"), long);
+
+@Resilient
+create schema InputData_0_${ruleId} (
+    measurementCreated MeasurementCreated,
+    meterValue BigDecimal
+);
+
+@Resilient
+create schema InputData_${ruleId} (
+    measurementCreated MeasurementCreated,
+    meterValue BigDecimal,
+    timePoint Number
+);
+
+@Resilient
+create context DeviceMeasurements_${ruleId} partition by
+    measurementCreated.measurement.source.value, measurementCreated.measurement.type from InputData_${ruleId};
+
+@Name("ValidateMeasurement")
+@Resilient
+insert into InputData_0_${ruleId}
+select
+    measurementCreated as measurementCreated,
+    getNumber(measurementCreated.measurement, (getString(rule_${ruleId}, "config.inputFragment") || "." || getString(rule_${ruleId}, "config.inputSeries") || ".value")) as meterValue
+from MeasurementCreated measurementCreated
+where
+    rule_${ruleId} is not null
+    and (
+        measurementCreated.measurement.source.value in (getList(rule_${ruleId}, "enabledSources"))
+        or (getList(rule_${ruleId}, "enabledSources") is null and measurementCreated.measurement.source.value not in (getList(rule_${ruleId}, "disabledSources")))
+    );
+
+@Name("ValidateMeasurementNotNull")
+@Resilient
+insert into InputData_${ruleId}
+select 
+    inputData.measurementCreated as measurementCreated,
+    inputData.meterValue as meterValue,
+    cast(inputData.measurementCreated.time.toMillisec() / (output_interval_${ruleId} * 1000), int) as timePoint 
+from InputData_0_${ruleId} inputData
+where meterValue is not null;
+
+@Resilient
+create schema FirstAndLast(
+    size long,
+    firstMeterValue BigDecimal,
+    lastMeterValue BigDecimal,
+    firstTime Date,
+    lastTime Date,
+    source String,
+    type String
+);
+
+@Name("CreateCaptureSnapshotWindow")
+@Resilient
+context DeviceMeasurements_${ruleId}
+create window MeasSnapshot_${ruleId}.win:length(2).std:firstunique(timePoint) retain-intersection as InputData_${ruleId};
+
+@Name("CaptureSnapshot")
+@Resilient
+insert into MeasSnapshot_${ruleId} select * from InputData_${ruleId};
+
+@Name("AssembleDataFromFirstAndLastMeasurement")
+@Resilient
+context DeviceMeasurements_${ruleId}
+on MeasSnapshot_${ruleId}
+insert into FirstAndLast
+select
+    count(ms) as size,
+    first(ms.meterValue) as firstMeterValue,
+    first(ms.measurementCreated.time) as firstTime,
+    last(ms.meterValue) as lastMeterValue,
+    last(ms.measurementCreated.time) as lastTime,
+    context.key1 as source,
+    context.key2 as type
+from MeasSnapshot_${ruleId} ms;
+
+@Name("CreateMeasurement")
+@Resilient
+expression calcConsumption(e) {
+    e => case e.lastTime.toMillisec() = e.firstTime.toMillisec()
+        when (true) then 0
+        else cast(((e.lastMeterValue - e.firstMeterValue) * 3600000), long) / (e.lastTime.toMillisec() - e.firstTime.toMillisec())
+    end
+}
+insert into CreateMeasurement
+select
+    type as type,
+    source as source,
+    lastTime as time,
+    {
+        getString(rule_${ruleId}, "config.outputFragment") || "." || getString(rule_${ruleId}, "config.outputSeries") || ".value",
+        calcConsumption(firstAndLast)
+    } as fragments
+from FirstAndLast as firstAndLast
+where
+    firstAndLast.size = 2;

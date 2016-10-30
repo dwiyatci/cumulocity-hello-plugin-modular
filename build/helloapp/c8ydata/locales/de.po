@@ -1,0 +1,1082 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: de\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.9\n"
+
+msgid "APN"
+msgstr "APN"
+
+msgid "Acknowledgement"
+msgstr "Bestätigung"
+
+msgid "Acknowledgement number"
+msgstr "Bestätigungsnummer"
+
+msgid "Acknowledgement text"
+msgstr "Bestätigungstext"
+
+msgid "Active alarms status"
+msgstr "Aktive Alarme"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Address range"
+msgstr "Adressbereich"
+
+msgid "Agent config"
+msgstr "Agent-Konfiguration"
+
+msgid "Alarm"
+msgstr "Alarm"
+
+msgid "Alarm count 3 months"
+msgstr "Anzahl Alarme (letzte 3 Monate)"
+
+msgid "Alarm count today"
+msgstr "Anzahl Alarme (heute)"
+
+msgid "Alarm duration"
+msgstr "Alarmdauer"
+
+msgid "Alarm occurred"
+msgstr "Alarm aufgetreten"
+
+msgid "Alarm type"
+msgstr "Alarmtyp"
+
+msgid "Alarms"
+msgstr "Alarme"
+
+msgid "Altitude"
+msgstr "Höhe"
+
+msgid "Auth type"
+msgstr "Authentifizierungstyp"
+
+msgid "Availability"
+msgstr "Verfügbarkeit"
+
+msgid "Calculate"
+msgstr "Berechne"
+
+msgid "Calculates energy consumption"
+msgstr "Berechnet den Energieverbrauch"
+
+msgid "Cell ID"
+msgstr "Zell-ID"
+
+msgid "Cellular WAN"
+msgstr "Mobilnetz"
+
+msgid "City"
+msgstr "Stadt"
+
+msgid "City code"
+msgstr "PLZ"
+
+msgid "Clear All Logfiles"
+msgstr "Alle Logdateien löschen"
+
+msgid "Clear System Logfiles"
+msgstr "Systemlogs löschen"
+
+msgid "Clear device credentials"
+msgstr "Gerätezugangsdaten löschen"
+
+msgid "Communication mode"
+msgstr "Kommunikationsmodus"
+
+msgid "Config"
+msgstr "Konfiguration"
+
+msgid "Configuration snapshot"
+msgstr "Konfigurationssnapshot"
+
+msgid "Configure debouncing alarm text"
+msgstr "Text des entprellten Alarms"
+
+msgid "Configure debouncing interval for GPIO <N> [seconds]"
+msgstr "Entprellungsintervall für GPIO <n> (in Sekunden)"
+
+msgid "Configure interval for status report in SMS mode [seconds]"
+msgstr "Statusintervall im SMS-Modus (in Sekunden)"
+
+msgid "Connection"
+msgstr "Verbindung"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "Create alarm when measurement reaches explicit thresholds"
+msgstr "Alarm bei Überschreitung eines Schwellwerts erzeugen"
+
+msgid "Create alarm:"
+msgstr "Erzeuge Alarm:"
+
+msgid "Creates alarm when measurements are missing"
+msgstr "Alarm bei fehlenden Messdaten erzeugen"
+
+msgid "Creates alarms when measurement reaches thresholds"
+msgstr "Alarm bei Überschreitung der Bereichsgrenzen eines Datenpunkts erzeugen"
+
+msgid "Creation time"
+msgstr "Erstellungszeitpunkt"
+
+msgid "Critical"
+msgstr "Kritisch"
+
+msgid "Cycle data connection status"
+msgstr "Datenverbindung neustarten"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "DHCP Server"
+msgstr "DHCP-Server"
+
+msgid "DNS 1"
+msgstr "DNS 1"
+
+msgid "DNS 2"
+msgstr "DNS 2"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Dashboard & frequency"
+msgstr "Dashboard & Häufigkeit"
+
+msgid "Data logging"
+msgstr "Datenlogging"
+
+msgid "Data point"
+msgstr "Datenpunkt"
+
+msgid "Default AT Commands"
+msgstr "Default AT-Kommandos"
+
+msgid "Delete Active Jobs"
+msgstr "Aktive Jobs löschen"
+
+msgid "Device"
+msgstr "Gerät"
+
+msgid "Device Control"
+msgstr "Gerätesteuerung"
+
+msgid "Device Info"
+msgstr "Geräteinformation"
+
+msgid "Device info"
+msgstr "Geräteinformation"
+
+msgid "Device name"
+msgstr "Gerätename"
+
+msgid "Display selected roaming network"
+msgstr "Aktuelles Roaming-Netz anzeigen"
+
+msgid "E"
+msgstr "E"
+
+msgid "Enabled"
+msgstr "Eingeschaltet"
+
+msgid "End"
+msgstr "Ende"
+
+msgid "Energy"
+msgstr "Energie"
+
+msgid "Energy consumption measurement:"
+msgstr "Energieverbrauch"
+
+msgid "Escalate alarm"
+msgstr "Alarm eskalieren"
+
+msgid "Escalate as follows:"
+msgstr "Wie folgt eskalieren:"
+
+msgid "Escalation steps"
+msgstr "Eskalationsschritte"
+
+msgid "Event (no Parameter)"
+msgstr "Ereignis (parameterlos)"
+
+msgid "Event (with Parameter)"
+msgstr "Ereignis (mit Parametern)"
+
+msgid "Event count 3 months"
+msgstr "Anzahl Ereignisse (letzte 3 Monate)"
+
+msgid "Event count today"
+msgstr "Anzahl Ereignisse (heute)"
+
+msgid "Event type"
+msgstr "Ereignistyp"
+
+msgid "Events"
+msgstr "Ereignisse"
+
+msgid "Execute command template"
+msgstr "“execute”-Kommando"
+
+msgid "Execute operation:"
+msgstr "Kommando ausführen:"
+
+msgid "Executes an operation when alarm is received"
+msgstr "Führt bei einem Alarm ein Kommando aus"
+
+msgid "Factory Reset"
+msgstr "Fabrikeinstellungen"
+
+msgid "Factory reset"
+msgstr "Fabrikeinstellungen"
+
+msgid "Firmware"
+msgstr "Firmware"
+
+msgid "Fragment"
+msgstr "Fragment"
+
+msgid "Frequency"
+msgstr "Häufigkeit"
+
+msgid "GPIO"
+msgstr "GPIO"
+
+msgid "GPIO Pin"
+msgstr "GPIO-Pin"
+
+msgid "GPS"
+msgstr "GPS"
+
+msgid "Geofence"
+msgstr "Geofence"
+
+msgid "Geofence violation"
+msgstr "Geofence-Übertretung"
+
+msgid "Get Cinterion information"
+msgstr "Cinterion-Daten abfragen"
+
+msgid "Get Config"
+msgstr "Konfiguration abfragen"
+
+msgid "Get DHCP lease time [seconds]"
+msgstr "DHCP Lease Time (in Sekunden) abfragen"
+
+msgid "Get Device Serial Number"
+msgstr "Seriennummer abfragen"
+
+msgid "Get EVENTS Database"
+msgstr "EVENTS-Datenbank abfragen"
+
+msgid "Get GPIO notify mode"
+msgstr "GPIO-Benachrichtigungsmodus abfragen"
+
+msgid "Get GPS enable"
+msgstr "GPS-Status abfragen"
+
+msgid "Get I/O pin analogue input [volts]"
+msgstr "Analogeingang (in Volt) abfragen"
+
+msgid "Get I/O pin analogue raw voltage [volts]"
+msgstr "Analogeingang (in Volt, Rohdaten) abfragen"
+
+msgid "Get I/O pin capability"
+msgstr "Konfigurationsmöglichkeiten der I/O-Pins abfragen"
+
+msgid "Get I/O pin digital input"
+msgstr "Digitaleingang abfragen"
+
+msgid "Get I/O pin digital input threshold"
+msgstr "Schwellwert für Digitaleingang abfragen"
+
+msgid "Get I/O pin hardware gain"
+msgstr "Hardware-Verstärkung für I/O-Pin abfragen"
+
+msgid "Get I/O pin mode"
+msgstr "Modus für I/O-Pin abfragen"
+
+msgid "Get I/O pin scale"
+msgstr "Skalierung für I/O-Pin abfragen"
+
+msgid "Get ISP Database"
+msgstr "ISP-Datenbank abfragen"
+
+msgid "Get LOG Database"
+msgstr "LOG-Datenbank abfragen"
+
+msgid "Get MTU"
+msgstr "MTU abfragen"
+
+msgid "Get Metric"
+msgstr "Routenpriorität abfragen"
+
+msgid "Get PARAM Database"
+msgstr "PARAM-Datenbank abfragen"
+
+msgid "Get PROCCFG Database"
+msgstr "PROCCFG-Datenbank abfragen"
+
+msgid "Get SCHEDULE Database"
+msgstr "SCHEDULE-Datenbank abfragen"
+
+msgid "Get TEMPLATE Database"
+msgstr "TEMPLATE-Datenbank abfragen"
+
+msgid "Get Time"
+msgstr "Zeit abfragen"
+
+msgid "Get USER Database"
+msgstr "USER-Datenbank abfragen"
+
+msgid "Get agent GPIO interval [seconds]"
+msgstr "GPIO-Abfrageintervall setzen (in Sekunden)"
+
+msgid "Get agent GPS interval [seconds]"
+msgstr "GPS-Abfrageintervall abfragen (in Sekunden)"
+
+msgid "Get agent connection sever"
+msgstr "Cumulocity-URL abfragen"
+
+msgid "Get agent connection timeout [seconds]"
+msgstr "Verbindungstimeout abfragen (in Sekunden)"
+
+msgid "Get agent enable"
+msgstr "Einschaltstatus des Agenten abfragen"
+
+msgid "Get agent log level"
+msgstr "Loglevel des Agenten abfragen"
+
+msgid "Get agent modbus port"
+msgstr "Modbus-Port abfragen"
+
+msgid "Get agent network timeout [seconds]"
+msgstr "Netzwerktimeout abfragen (in Sekunden)"
+
+msgid "Get agent reconnect interval [seconds]"
+msgstr "Intervall zwischen Neuverbindungen abfragen (in Sekunden)"
+
+msgid "Get agent signal strength measurement interval [seconds]"
+msgstr "Abfrageintervall für Signalstärke abfragen (in Sekunden)"
+
+msgid "Get agent status"
+msgstr "Agentstatus abfragen"
+
+msgid "Get command template"
+msgstr "“Get”-Kommando"
+
+msgid "Get current receiver number"
+msgstr "SMS-Empfänger abfragen"
+
+msgid "Get detailed Cinterion information"
+msgstr "Detaillierte Cinterion-Daten abfragen"
+
+msgid "Get device user"
+msgstr "Gerätebenutzer abfragen"
+
+msgid "Get firmware and hardware version"
+msgstr "Firmware- und Hardwareversion abfragen"
+
+msgid "Get network update interval [seconds]"
+msgstr "Abfrageintervall für Netzwerk abfragen (in Sekunden)"
+
+msgid "Get power source and voltage"
+msgstr "Stromquelle und Spannung abfragen"
+
+msgid "Get power supply voltage"
+msgstr "Stromversorgung abfragen"
+
+msgid "Get pullup voltage [volts]"
+msgstr "Pull-up abfragen (in Volt)"
+
+msgid "Get reconnect delay [seconds]"
+msgstr "Pause zwischen Neuverbindungen abfragen (in Sekunden)"
+
+msgid "Get reconnect retries"
+msgstr "Anzahl Neuverbindungsversuche abfragen"
+
+msgid "Get serial baud rate"
+msgstr "Baudrate abfragen"
+
+msgid "Get serial port mode"
+msgstr "Modus der seriellen Schnittstelle abfragen"
+
+msgid "Get sim pin"
+msgstr "SIM-Pin abfragen"
+
+msgid "Get sim protection"
+msgstr "SIM-Pin-Status abfragen"
+
+msgid "Get supported serial baud rates"
+msgstr "Unterstützte Baudraten abfragen"
+
+msgid "Get system resources measurement interval [seconds]"
+msgstr "Anfrageintervall für Systemressourcemessungen abfragen (in Sekunden)"
+
+msgid "Hardware"
+msgstr "Hardware"
+
+msgid "I/O and PLC"
+msgstr "I/O und PLC"
+
+msgid "ICCID"
+msgstr "ICCID"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "IMEI"
+msgstr "IMEI"
+
+msgid "IMSI"
+msgstr "IMSI"
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Increase alarm severity"
+msgstr "Alarmschweregrad erhöhen"
+
+msgid "Increase alarm severity when active for too long"
+msgstr "Alarmschweregrad erhöhen, wenn Alarm zu lange aktiv ist"
+
+msgid "Interval"
+msgstr "Intervall"
+
+msgid "J2ME commands"
+msgstr "J2ME-Kommandos"
+
+msgid "LAC"
+msgstr "LAC"
+
+msgid "LAN"
+msgstr "LAN"
+
+msgid "Last device message"
+msgstr "Letzte Nachricht vom Gerät"
+
+msgid "Last measurement"
+msgstr "Letzter Messwert"
+
+msgid "Last message"
+msgstr "Letzte Nachricht"
+
+msgid "Last updated"
+msgstr "Zuletzt aktualisiert"
+
+msgid "Latitude"
+msgstr "Breitengrad"
+
+msgid "LogIn"
+msgstr "Login"
+
+msgid "LogIn CHAP"
+msgstr "CHAP-Login"
+
+msgid "LogIn CHAP Response"
+msgstr "CHAP-Login-Antwort"
+
+msgid "LogOut"
+msgstr "Ausloggen"
+
+msgid "Longitude"
+msgstr "Längengrad"
+
+msgid "MAC"
+msgstr "MAC"
+
+msgid "MAJOR"
+msgstr "WICHTIG"
+
+msgid "MCC"
+msgstr "MCC"
+
+msgid "MNC"
+msgstr "MNC"
+
+msgid "MSISDN"
+msgstr "MSISDN"
+
+msgid "Major"
+msgstr "Wichtig"
+
+msgid "Managed object"
+msgstr "Objekt"
+
+msgid "Measurements"
+msgstr "Messwerte"
+
+msgid "Message"
+msgstr "Nachricht"
+
+msgid "Minor"
+msgstr "Weniger wichtig"
+
+msgid "Missing measurements of type: #{type}"
+msgstr "Fehlende Messwerte vom Typ #{type}"
+
+msgid "Mobile"
+msgstr "Mobil"
+
+msgid "Modbus-RTU config"
+msgstr "Modbus-RTU-Konfiguration"
+
+msgid "Mode"
+msgstr "Modus"
+
+msgid "Model"
+msgstr "Modell"
+
+msgid "Monitored measurement:"
+msgstr "Verwendeter Messwert:"
+
+msgid "Motion detector"
+msgstr "Bewegungsmelder"
+
+msgid "NTC commands"
+msgstr "NTC-Kommandos"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Netmask"
+msgstr "Netzmaske"
+
+msgid "Network"
+msgstr "Netzwerk"
+
+msgid "New #{severity} alarm from #{source.name}"
+msgstr "Neuer Alarm mit Schweregrad #{severity} von #{source.name}"
+
+msgid "New #{severity} alarm has been received from #{source.name}. Alarm text is: \"#{text}\"."
+msgstr "Neuer Alarm mit Schweregrad #{severity} von #{source.name}. Der Alarmtext lautet: \"#{text}\"."
+
+msgid "New geofence violation from #{source.name}"
+msgstr "Geofence-Übertretung von #{source.name}"
+
+msgid "Notes"
+msgstr "Notizen"
+
+msgid "Number of child assets"
+msgstr "Anzahl der Kindassets"
+
+msgid "Number of child devices"
+msgstr "Anzahl der Kindgeräte"
+
+msgid "On alarm"
+msgstr "Bei Alarm"
+
+msgid "On alarm duration"
+msgstr "Bei Alarmdauer"
+
+msgid "On alarm matching:"
+msgstr "Bei Alarm vom Typ:"
+
+msgid "On entering"
+msgstr "Betreten"
+
+msgid "On entering and leaving"
+msgstr "Betreten und Verlassen"
+
+msgid "On geofence"
+msgstr "Bei Geofence"
+
+msgid "On geofence create alarm"
+msgstr "Bei Geofence-Verletzung Alarm erzeugen"
+
+msgid "On geofence send e-mail"
+msgstr "Bei Geofence-Verletzung E-Mail senden"
+
+msgid "On geofence violation:"
+msgstr "Bei Geofence-Verletzung:"
+
+msgid "On leaving"
+msgstr "Verlassen"
+
+msgid "On measurement explicit threshold"
+msgstr "Bei Schwellwertüberschreitung"
+
+msgid "On measurement threshold"
+msgstr "Bei Bereichsüberschreitung"
+
+msgid "On missing measurements"
+msgstr "Bei fehlenden Messdaten"
+
+msgid "On threshold:"
+msgstr "Bei Schwellwertüberschreitung:"
+
+msgid "On timer"
+msgstr "Bei Timerablauf"
+
+msgid "Operation"
+msgstr "Kommando"
+
+msgid "Owner"
+msgstr "Eigentümer"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+msgid "Please acknowledge this call by pressing the button 5"
+msgstr "Bitte bestätigen Sie diesen Anruf, in dem Sie die 5 wählen."
+
+msgid "Position"
+msgstr "Position"
+
+msgid "Print screen of dashboard"
+msgstr "Bilschirmabzug des Dashboards"
+
+msgid "Project data"
+msgstr "Projektdaten"
+
+msgid "Query Active Jobs"
+msgstr "Aktive Jobs abfragen"
+
+msgid "Query Analog Input Hutline"
+msgstr "Analogeingang abfragen"
+
+msgid "Query Enabled Servicese"
+msgstr "Eingeschaltete Services abfragen"
+
+msgid "Query Ethernet state"
+msgstr "Ethernet-Status abfragen"
+
+msgid "Query Firmware Version"
+msgstr "Firmwareversion abfragen"
+
+msgid "Query GSM state"
+msgstr "GSM-Status abfragen"
+
+msgid "Query Hardware"
+msgstr "Hardware abfragen"
+
+msgid "Query Inputs Hutline"
+msgstr "Eingänge abfragen"
+
+msgid "Query Outputs Hutline"
+msgstr "Ausgänge abfragen"
+
+msgid "Query ProcessVars"
+msgstr "Processvariablen abfragen"
+
+msgid "Query Stations Bus"
+msgstr "Stationsbus abfragen"
+
+msgid "Query WLAN state"
+msgstr "WLAN-Status abfragen"
+
+msgid "Read Event-Log"
+msgstr "Event-Log abfragen"
+
+msgid "Read FailedIncomingCall-Log"
+msgstr "FailedIncomingCall-Log abfragen"
+
+msgid "Read IncomingMessage-Log"
+msgstr "IncomingMessage-Log abfragen"
+
+msgid "Read Job-Report"
+msgstr "JobReport abfragen"
+
+msgid "Read Log Counter"
+msgstr "LogCounter abfagen"
+
+msgid "Read Logfile"
+msgstr "Logdatei abfragen"
+
+msgid "Read Login-Log"
+msgstr "Login-Log abfragen"
+
+msgid "Read SupportLog"
+msgstr "SupportLog abfragen"
+
+msgid "Reboot device"
+msgstr "Gerät neustarten"
+
+msgid "Red range (max)"
+msgstr "Roter Bereich (max)"
+
+msgid "Red range (min)"
+msgstr "Roter Bereich (min)"
+
+msgid "Region"
+msgstr "Region"
+
+msgid "Remote Control"
+msgstr "Fernsteuerung"
+
+msgid "Reoccurrence count"
+msgstr "Wiederholungszähler"
+
+msgid "Reply to"
+msgstr "Antwort an"
+
+msgid "Required availability"
+msgstr "Verbindungsüberwachung"
+
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgid "Reset Update"
+msgstr "Reset Update"
+
+msgid "Response interval"
+msgstr "Erwartetes Sendeintervall"
+
+msgid "Restart device"
+msgstr "Gerät neustarten"
+
+msgid "Retries"
+msgstr "Wiederholungen"
+
+msgid "Revision"
+msgstr "Version"
+
+msgid "SIM status"
+msgstr "SIM-Status"
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SRT 360i Sample Commands"
+msgstr "SRT 360i Beispielkommandos"
+
+msgid "Scan M-Bus"
+msgstr "M-Bus scannen"
+
+msgid "ScanWLAN"
+msgstr "WLAN scannen"
+
+msgid "Send BCC to"
+msgstr "BCC an"
+
+msgid "Send CC to"
+msgstr "CC an"
+
+msgid "Send SMS:"
+msgstr "SMS senden:"
+
+msgid "Send dashboard via email"
+msgstr "Dashboard per E-Mail verschicken"
+
+msgid "Send e-mail:"
+msgstr "E-Mail senden:"
+
+msgid "Send to"
+msgstr "Senden an"
+
+msgid "Serial"
+msgstr "Seriennummer"
+
+msgid "Serial number"
+msgstr "Seriennummer"
+
+msgid "Series"
+msgstr "Datenpunkt"
+
+msgid "Set AT command error messaging"
+msgstr "AT-Kommando Fehlermeldungen setzen"
+
+msgid "Set Config"
+msgstr "Set Config"
+
+msgid "Set DHCP lease time [seconds]"
+msgstr "DHCP Lease Time (in Sekunden) setzen"
+
+msgid "Set GPIO notify mode"
+msgstr "GPIO-Benachrichtigungsmodus setzen"
+
+msgid "Set GPS enable"
+msgstr "GPS-Status setzen"
+
+msgid "Set I/O pin hardware gain"
+msgstr "Hardwareverstärkung für I/O-Pin setzen"
+
+msgid "Set I/O pin mode"
+msgstr "Modus für I/O-Pin setzen"
+
+msgid "Set I/O pin scale"
+msgstr "Skalierung für I/O-Pin setzen"
+
+msgid "Set MTU"
+msgstr "MTU setzen"
+
+msgid "Set Metric"
+msgstr "Routenpriorität setzen"
+
+msgid "Set Output Hutline"
+msgstr "Ausgang setzen"
+
+msgid "Set SignalLED"
+msgstr "Signal-LED setzen"
+
+msgid "Set TestMode"
+msgstr "TestMode setzen"
+
+msgid "Set Time"
+msgstr "Zeit setzen"
+
+msgid "Set Variable Bus"
+msgstr "Busvariable setzen"
+
+msgid "Set Variable PV"
+msgstr "Prozessvariable setzen"
+
+msgid "Set agent GPIO interval [seconds]"
+msgstr "GPIO-Abfrageintervall setzen (in Sekunden)"
+
+msgid "Set agent GPS interval [seconds]"
+msgstr "GPS-Abfrageintervall setzen (in Sekunden)"
+
+msgid "Set agent connection sever"
+msgstr "Cumulocity-URL setzen"
+
+msgid "Set agent connection timeout [seconds]"
+msgstr "Verbindungstimeout setzen (in Sekunden)"
+
+msgid "Set agent enable"
+msgstr "Einschaltstatus des Agenten setzen"
+
+msgid "Set agent log level"
+msgstr "Loglevel des Agenten setzen"
+
+msgid "Set agent modbus port"
+msgstr "Modbus-Port setzen"
+
+msgid "Set agent network timeout [seconds]"
+msgstr "Netzwerk-Timeout setzen (in Sekunden)"
+
+msgid "Set agent reconnect interval [seconds]"
+msgstr "Intervall zwischen Neuverbindungen setzen (in Sekunden)"
+
+msgid "Set agent signal strength measurement interval [seconds]"
+msgstr "Signalstärke-Abfrageintervall setzen (in Sekunden)"
+
+msgid "Set command template"
+msgstr "“Set”-Kommando"
+
+msgid "Set configuration parameter"
+msgstr "Konfigurationsparameter setzen"
+
+msgid "Set network update interval [seconds]"
+msgstr "Abfrageintervall für Netzwerk setzen (in Sekunden)"
+
+msgid "Set pullup voltage [volts]"
+msgstr "Pull-up setzen (in Volt)"
+
+msgid "Set receiver number for SMS mode"
+msgstr "SMS-Empfänger setzen"
+
+msgid "Set reconnect delay [seconds]"
+msgstr "Pause zwischen Neuverbindungen setzen (in Sekunden)"
+
+msgid "Set reconnect retries"
+msgstr "Anzahl Neuverbindungsversuche setzen"
+
+msgid "Set serial baud rate"
+msgstr "Baudrate setzen"
+
+msgid "Set serial port mode"
+msgstr "Modus der seriellen Schnittstelle setzen"
+
+msgid "Set sim pin"
+msgstr "SIM-Pin setzen"
+
+msgid "Set sim protection"
+msgstr "SIM-Pin-Status setzen"
+
+msgid "Set system resources measurement interval [seconds]"
+msgstr "Anfrageintervall für Systemressourcemessungen setzen (in Sekunden)"
+
+msgid "Severity"
+msgstr "Schweregrad"
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Sound detector"
+msgstr "Geräuschmelder"
+
+msgid "Source"
+msgstr "Quelle"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Process"
+msgstr "Prozess starten"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Stop Process"
+msgstr "Prozess anhalten"
+
+msgid "Street"
+msgstr "Straße"
+
+msgid "Subject"
+msgstr "Betreff"
+
+msgid "Switch motion detector off"
+msgstr "Bewegungsmelder abschalten"
+
+msgid "Switch motion detector on"
+msgstr "Bewegungsmelder einschalten"
+
+msgid "Switch sound detector off"
+msgstr "Geräuschmelder ausschalten"
+
+msgid "Switch sound detector on"
+msgstr "Geräuschmelder einschalten"
+
+msgid "Switch to ModemMode"
+msgstr "ModemMode einschalten"
+
+msgid "Switch vibration detector off"
+msgstr "Vibrationssensor ausschalten"
+
+msgid "Switch vibration detector on"
+msgstr "Vibrationssensor einschalten"
+
+msgid "Template"
+msgstr "Muster"
+
+msgid "Territory"
+msgstr "Gebiet"
+
+msgid "Test Scheduler"
+msgstr "Scheduler testen"
+
+msgid "Test Sequencer"
+msgstr "Sequencer testen"
+
+msgid "Testing"
+msgstr "Tests"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Text-to-speech:"
+msgstr "Textvertonung:"
+
+msgid "Threshold exceeded"
+msgstr "Schwellwert überschritten"
+
+msgid "Thresholds exceeded"
+msgstr "Schwellwerte überschritten"
+
+msgid "Time"
+msgstr "Zeit"
+
+msgid "Time interval"
+msgstr "Zeitintervall"
+
+msgid "Tixi Commands"
+msgstr "Tixi-Kommandos"
+
+msgid "TransMode"
+msgstr "TransMode"
+
+msgid "Trigger on"
+msgstr "Auslösen bei ... des Geofence"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Vibration detector"
+msgstr "Vibrationssensor"
+
+msgid "WAN"
+msgstr "WAN"
+
+msgid "WAN Profile"
+msgstr "WAN-Profil"
+
+msgid "Warning"
+msgstr "Warnung"
+
+msgid "When alarm is received then SMS is sent"
+msgstr "Bei Alarm wird SMS gesendet"
+
+msgid "When alarm is received then e-mail is sent"
+msgstr "Bei Alarm wird E-Mail gesendet"
+
+msgid "When alarm is received, text-to-speech call is initiated"
+msgstr "Bei Alarm wird angerufen"
+
+msgid "c8y_EnergyConsumption"
+msgstr "c8y_EnergyConsumption"
+
+msgid "c8y_EnergyCounter"
+msgstr "c8y_EnergyCounter"
+
+msgid "c8y_GeofenceAlarm"
+msgstr "c8y_GeofenceAlarm"
+
+msgid "c8y_MissingMeasurementsAlarm"
+msgstr "c8y_MissingMeasurementsAlarm"
+
+msgid "c8y_ThresholdAlarm"
+msgstr "c8y_ThresholdAlarm"
+
+msgid "create alarm"
+msgstr "Alarm erzeugen"
+
+msgid "e-mail"
+msgstr "E-Mail"
+
+msgid "energy consumption"
+msgstr "Energieverbrauch"
+
+msgid "escalate it"
+msgstr "eskalieren"
+
+msgid "execute operation"
+msgstr "Kommando ausführen"
+
+msgid "increase severity"
+msgstr "Schweregrad erhöhen"
+
+msgid "initiate text-to-speech call"
+msgstr "Anruf starten"
+
+msgid "leaving"
+msgstr "Verlassen"
+
+msgid "send SMS"
+msgstr "SMS senden"
+
+msgid "send dashboard via e-mail"
+msgstr "Dashboard per E-Mail senden"
+
+msgid "send e-mail"
+msgstr "E-Mail senden"
