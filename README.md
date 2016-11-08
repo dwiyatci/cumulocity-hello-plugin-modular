@@ -13,12 +13,22 @@ This boilerplate is basically a twin of [cumulocity-ui-plugin-examples](https://
 * Make sure you have Node.js >= v6.9.1 installed and npm from its [website](https://nodejs.org), or better even, use [nvm](https://github.com/creationix/nvm).
 
 * Clone the repo, `cd` to your project directory, and setup dependencies:
+
 ```bash
 $ npm run install:clean
 ```
 
 ## Usage
 Check out [the introduction to plugin development docs](http://cumulocity.com/guides/web/introduction/).
+
+## Quicky up and running
+Oh well, I know that you guys are a bunch of lazy people. How to get this app deployed and see it running on my tenant, you ask? Be my guest:
+
+```bash
+$ npm run deploy
+```
+
+After a few more steps in interactive command line user interfaces, you should then be able to access the app on `https://<your-tenant-url>/apps/helloapp/`.
 
 ## Author
 Glenn Dwiyatcita ([@dwiyatci](http://tiny.cc/dwiyatci))
