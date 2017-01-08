@@ -26,7 +26,7 @@
     "build": "npm run clean && c8y build:app",
     "deploy:easy": "npm run clean:tmp && c8y deploy:target target.json",
     "deploy:fast": "npm run deploy -- -p build/helloapp.zip",
-    "deploy": "npm run clean:tmp && c8y deploy:app",
+    "deploy": "npm run clean:tmp && c8y deploy:app helloapp",
     "clean": "rimraf build",
     "clean:tmp": "rimraf _build_for_deploy",
     "lint": "eslint --cache --",
