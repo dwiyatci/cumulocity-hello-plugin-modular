@@ -15,16 +15,16 @@
       controller: Controller,
       controllerAs: 'vm'
     });
-  
+
   function Controller() {
     var vm = this;
 
     _.assign(vm, {
       $onInit: onInit
     });
-    
+
     ////////////
-    
+
     function onInit() {
       vm.text = vm.text || 'hello, world';
     }
