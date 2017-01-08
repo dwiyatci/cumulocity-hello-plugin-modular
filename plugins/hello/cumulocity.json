@@ -9,11 +9,10 @@
   "js": [
     "hello.module.js",
     "hello.config.js",
-    "hello.controller.js",
+    "hello.component.js",
     "hello.fiddle.js"
   ],
   "imports": [],
   "css": [],
-  "less": [],
   "copy": []
 }

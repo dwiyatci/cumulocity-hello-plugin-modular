@@ -9,10 +9,7 @@
     .module('helloapp.hello')
     .run(runBlock);
 
-  runBlock.$inject = [
-    'c8ySystem'
-  ];
-
+  /* @ngInject */
   function runBlock(
     c8ySystem
   ) {

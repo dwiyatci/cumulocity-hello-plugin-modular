@@ -9,11 +9,7 @@
     .module('helloapp.hello')
     .config(configure);
 
-  configure.$inject = [
-    'c8yNavigatorProvider',
-    'c8yViewsProvider'
-  ];
-
+  /* @ngInject */
   function configure(
     c8yNavigatorProvider,
     c8yViewsProvider
@@ -26,9 +22,7 @@
     });
 
     c8yViewsProvider.when('/hello', {
-      templateUrl: ':::PLUGIN_PATH:::/views/hello.html',
-      controller: 'HelloController',
-      controllerAs: 'vm'
+      templateUrl: ':::PLUGIN_PATH:::/main.html'
     });
   }
 }());
