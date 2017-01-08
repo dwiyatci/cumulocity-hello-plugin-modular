@@ -20,8 +20,8 @@
     "url": "https://github.com/dwiyatci/cumulocity-hello-plugin-modular.git"
   },
   "scripts": {
-    "preinstall:clean": "(npm up -g rimraf && rimraf -h || npm i -g rimraf) && (npm up -g yarn && yarn -h || npm i -g yarn)",
-    "install:clean": "rimraf node_modules && yarn install && c8y install",
+    "preinstall:clean": "node ./preinstall.js rimraf yarn",
+    "install:clean": "yarn upgrade && c8y install",
     "start": "c8y server -u https://glenn.cumulocity.com -k",
     "build": "npm run clean && c8y build:app",
     "deploy:easy": "npm run clean:tmp && c8y deploy:target target.json",
@@ -30,10 +30,10 @@
     "clean": "rimraf build",
     "clean:tmp": "rimraf _build_for_deploy"
   },
-  "devDependencies": {
-    "cumulocity-tools": "2.0.8"
-  },
   "dependencies": {
-    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.37.0.tar.gz"
+    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.41.1.tar.gz"
+  },
+  "devDependencies": {
+    "cumulocity-tools": "2.0.12"
   }
 }
