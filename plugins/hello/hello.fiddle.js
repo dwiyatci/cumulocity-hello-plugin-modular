@@ -6,7 +6,7 @@
   'use strict';
 
   angular
-    .module('helloapp.hello')
+    .module('helloApp.hello')
     .run(runBlock);
 
   /* @ngInject */

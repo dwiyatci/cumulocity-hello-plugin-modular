@@ -8,7 +8,7 @@ describe('helloapp.hello: c8yHello component', function () {
 
   beforeEach(function () {
     common.globalBeforeWithUI();
-    module('helloapp.hello');
+    module('helloApp.hello');
 
     inject(function (
       _$injector_,

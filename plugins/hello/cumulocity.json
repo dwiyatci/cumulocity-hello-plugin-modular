@@ -4,7 +4,7 @@
   "category": "Boilerplates",
   "list": true,
   "ngModules": [
-    "helloapp.hello"
+    "helloApp.hello"
   ],
   "js": [
     "hello.module.js",

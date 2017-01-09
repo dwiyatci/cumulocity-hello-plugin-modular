@@ -6,7 +6,7 @@
   'use strict';
 
   angular
-    .module('helloapp.hello')
+    .module('helloApp.hello')
     .component('c8yHello', {
       templateUrl: ':::PLUGIN_PATH:::/hello.html',
       bindings: {
