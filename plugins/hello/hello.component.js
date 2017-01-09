@@ -8,7 +8,7 @@
   angular
     .module('helloapp.hello')
     .component('c8yHello', {
-      template: '<div>{{vm.text}}</div>',
+      templateUrl: ':::PLUGIN_PATH:::/hello.html',
       bindings: {
         text: '@'
       },
