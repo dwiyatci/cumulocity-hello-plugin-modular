@@ -74,7 +74,7 @@ module.exports = (config) => {
 
 function c8yPluginPathPreprocessor() {
   return (content, file, done) => {
-    done(content.replace(':::PLUGIN_PATH:::', computePluginPath(file.originalPath)));
+    done(content.replace(/:::PLUGIN_PATH:::/g, computePluginPath(file.originalPath)));
   };
 }
 
