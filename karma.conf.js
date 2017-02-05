@@ -45,7 +45,7 @@ module.exports = (config) => {
     ],
 
     preprocessors: {
-      'plugins/{**/,}*.js': ['c8y-pluginpath'],
+      'plugins/**/*.js': ['c8y-pluginpath'],
       'plugins/**/*.html': ['ng-html2js']
     },
 
