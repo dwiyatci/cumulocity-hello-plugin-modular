@@ -1,5 +1,5 @@
 /**
- * Created by glenn on 1/8/17.
+ * Created by glenn on 08.01.17.
  */
 
 (function () {
@@ -17,7 +17,7 @@
     });
 
   function Controller() {
-    var vm = this;
+    const vm = this;
 
     _.assign(vm, {
       $onInit: onInit

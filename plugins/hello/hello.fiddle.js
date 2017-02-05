@@ -1,5 +1,5 @@
 /**
- * Created by glenn on 8/15/16.
+ * Created by glenn on 15.08.16.
  */
 
 (function () {
@@ -13,13 +13,15 @@
   function runBlock(
     c8ySystem
   ) {
-    c8ySystem
-      .getUIVersion()
-      .then(function (version) {
-        console.log(version);
-      });
+    printUiVersion().then(() => {
+      // Put your fiddle code here.
+      console.log('hello, world');
+    });
 
-    // Put your fiddle code here.
-    console.log('hello, world');
+    async function printUiVersion() {
+      const version = await c8ySystem.getUIVersion();
+
+      console.log(`Cumulocity UI version: ${version}`);
+    }
   }
 }());
