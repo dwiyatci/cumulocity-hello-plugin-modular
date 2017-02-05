@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions"
+          ]
+        },
+        "exclude": [
+          "transform-regenerator"
+        ],
+        "useBuiltIns": true,
+        "debug": false
+      }
+    ]
+  ]
+}

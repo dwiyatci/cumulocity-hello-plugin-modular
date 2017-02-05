@@ -22,6 +22,7 @@ module.exports = (config) => {
     singleRun: true,
 
     files: [
+      'node_modules/babel-polyfill/dist/polyfill.js',
       'node_modules/cumulocity-ui-build/core/main.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/sinon/pkg/sinon.js',
@@ -41,12 +42,19 @@ module.exports = (config) => {
       'karma-phantomjs-launcher',
       'karma-spec-reporter',
       'karma-ng-html2js-preprocessor',
+      'karma-babel-preprocessor',
       { 'preprocessor:c8y-pluginpath': ['factory', c8yPluginPathPreprocessor] }
     ],
 
     preprocessors: {
-      'plugins/**/*.js': ['c8y-pluginpath'],
+      // Match files in all plugins subfolders except vendor/
+      'plugins/*/{*.js,!(vendor)/**/*.js}': ['c8y-pluginpath', 'babel'],
       'plugins/**/*.html': ['ng-html2js']
+    },
+    babelPreprocessor: {
+      options: {
+        presets: [['env', { debug: false }]]
+      }
     },
 
     reporters: ['spec'],
