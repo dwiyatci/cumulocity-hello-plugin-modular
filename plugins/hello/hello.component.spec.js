@@ -1,23 +1,23 @@
 /**
- * Created by glenn on 1/8/17.
+ * Created by glenn on 08.01.17.
  */
 
-describe('helloapp.hello: c8yHello component', function () {
-  var $injector;
-  var $rootScope;
-  var $compile;
-  var $componentController;
+describe('helloapp.hello: c8yHello component', () => {
+  let $injector;
+  let $rootScope;
+  let $compile;
+  let $componentController;
 
-  beforeEach(function () {
+  beforeEach(() => {
     common.globalBeforeWithUI();
     module('helloApp.hello');
 
-    inject(function (
+    inject((
       _$injector_,
       _$rootScope_,
       _$compile_,
       _$componentController_
-    ) {
+    ) => {
       $injector = _$injector_;
       $rootScope = _$rootScope_;
       $compile = _$compile_;
@@ -25,36 +25,36 @@ describe('helloapp.hello: c8yHello component', function () {
     });
   });
 
-  it('component should exist', function () {
+  it('component should exist', () => {
     expect($injector.has('c8yHelloDirective'))
       .toEqual(true);
   });
 
-  describe('displaying text', function () {
-    var element;
+  describe('displaying text', () => {
+    let element;
 
-    beforeEach(function () {
+    beforeEach(() => {
       //////////// stubbing dependencies
 
     });
 
-    it('should display "hello, world" by default', function () {
+    it('should display "hello, world" by default', () => {
       // given
-      var textBinding;
+      const textBinding = undefined;
 
       testDisplayingText(textBinding, 'hello, world');
     });
 
-    it('should display text according to the text binding', function () {
+    it('should display text according to the text binding', () => {
       // given
-      var textBinding = 'halo, dunia';
+      const textBinding = 'halo, dunia';
 
       testDisplayingText(textBinding, textBinding);
     });
 
     function testDisplayingText(textBinding, expectedText) {
       // when
-      var controller = $componentController('c8yHello', undefined, { text: textBinding });
+      const controller = $componentController('c8yHello', undefined, { text: textBinding });
       controller.$onInit();
 
       // then
@@ -62,10 +62,10 @@ describe('helloapp.hello: c8yHello component', function () {
         .toEqual(expectedText);
     }
 
-    it('you should compile the component instead if use case getting too complex', function () {
+    it('you should compile the component instead if use case getting too complex', () => {
       // given
-      var bindings = { world: 'world' };
-      var template = '<c8y-hello world="world"></c8y-hello>';
+      const bindings = { world: 'world' };
+      const template = '<c8y-hello world="world"></c8y-hello>';
 
       // when
       initComponent(template, bindings);
@@ -78,7 +78,7 @@ describe('helloapp.hello: c8yHello component', function () {
     });
 
     function initComponent(template, bindings) {
-      var $scope = _.assign($rootScope.$new(), bindings);
+      const $scope = _.assign($rootScope.$new(), bindings);
 
       element = $compile(template)($scope);
       $scope.$digest();

@@ -1,7 +1,7 @@
 {
   "name": "Hello world plugin testing",
   "description": "Simple hello world plugin",
-  "category": "Boilerplates",
+  "category": "Boilerplate",
   "list": true,
   "ngModules": [
     "helloApp.hello"
