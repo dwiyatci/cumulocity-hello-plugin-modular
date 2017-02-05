@@ -4,6 +4,8 @@
 
 describe('helloapp.hello: c8yHello component', function () {
   var $injector;
+  var $rootScope;
+  var $compile;
   var $componentController;
 
   beforeEach(function () {
@@ -12,9 +14,13 @@ describe('helloapp.hello: c8yHello component', function () {
 
     inject(function (
       _$injector_,
+      _$rootScope_,
+      _$compile_,
       _$componentController_
     ) {
       $injector = _$injector_;
+      $rootScope = _$rootScope_;
+      $compile = _$compile_;
       $componentController = _$componentController_;
     });
   });
@@ -25,9 +31,11 @@ describe('helloapp.hello: c8yHello component', function () {
   });
 
   describe('displaying text', function () {
-    beforeEach(function () {
+    var element;
 
+    beforeEach(function () {
       //////////// stubbing dependencies
+
     });
 
     it('should display "hello, world" by default', function () {
@@ -52,6 +60,28 @@ describe('helloapp.hello: c8yHello component', function () {
       // then
       expect(controller.text)
         .toEqual(expectedText);
+    }
+
+    it('you should compile the component instead if use case getting too complex', function () {
+      // given
+      var bindings = { world: 'world' };
+      var template = '<c8y-hello world="world"></c8y-hello>';
+
+      // when
+      initComponent(template, bindings);
+
+      // then
+      expect(element.html())
+        .toContain('hello');
+      expect(element.controller('c8yHello').text)
+        .toEqual('hello, world');
+    });
+
+    function initComponent(template, bindings) {
+      var $scope = _.assign($rootScope.$new(), bindings);
+
+      element = $compile(template)($scope);
+      $scope.$digest();
     }
   });
 });
