@@ -45,8 +45,8 @@ module.exports = (config) => {
     ],
 
     preprocessors: {
-      '**/plugins/{**/,}*.js': ['c8y-pluginpath'],
-      '**/*.html': ['ng-html2js']
+      'plugins/{**/,}*.js': ['c8y-pluginpath'],
+      'plugins/**/*.html': ['ng-html2js']
     },
 
     reporters: ['spec'],
