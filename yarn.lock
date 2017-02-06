@@ -871,8 +871,8 @@ camelcase@^2.0.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-2.1.1.tgz#7c1d16d679a1bbe59ca02cacecfb011e201f5a1f"
 
 caniuse-db@^1.0.30000617:
-  version "1.0.30000620"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000620.tgz#88b27b951966c5b0d127c4448169b92a1339e453"
+  version "1.0.30000621"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000621.tgz#be8726af1a39315618a0f364998cf9c9a0431177"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1153,9 +1153,9 @@ css-what@1.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-1.0.0.tgz#d7cc2df45180666f99d2b14462639469e00f736c"
 
-cumulocity-tools@2.0.12:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/cumulocity-tools/-/cumulocity-tools-2.0.12.tgz#ef18372c1afd079a0ee22109a6dc3ca73ff11452"
+cumulocity-tools@2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/cumulocity-tools/-/cumulocity-tools-2.0.14.tgz#1801326c9b3ebd0a5b01dde4039fd03c96900d6a"
   dependencies:
     JSONPath "0.11.2"
     angular-gettext-tools "^2.1.6"
