@@ -33,12 +33,12 @@
     "test": "karma start -- helloapp"
   },
   "dependencies": {
-    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.43.2.tar.gz"
+    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/8.0.0.tar.gz"
   },
   "devDependencies": {
     "angular-mocks": "1.5.8",
     "babel-eslint": "6.x",
-    "cumulocity-tools": "2.0.12",
+    "cumulocity-tools": "2.0.16",
     "eslint": "3.13.0",
     "eslint-config-airbnb-es5": "1.1.0",
     "eslint-plugin-react": "6.8.0",
