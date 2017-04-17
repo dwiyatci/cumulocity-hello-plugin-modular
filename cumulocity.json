@@ -1,17 +1,10 @@
 {
   "contextPath": "helloapp",
-  "key": "helloapp-application-key",
   "name": "Hello world application",
-  "availability": "PRIVATE",
-  "resourcesUrl": "/",
-  "type": "HOSTED",
+  "key": "helloapp-application-key",
   "imports": [
     "core/c8yBranding",
+    "helloapp/babel-polyfill",
     "helloapp/hello"
-  ],
-  "noAppSwitcher": false,
-  "options": {
-    "tabsHorizontal": false,
-    "hideNavigator": false
-  }
+  ]
 }

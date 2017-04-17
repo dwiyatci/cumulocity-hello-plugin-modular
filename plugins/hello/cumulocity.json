@@ -2,7 +2,6 @@
   "name": "Hello world plugin testing",
   "description": "Simple hello world plugin",
   "category": "Boilerplate",
-  "list": true,
   "ngModules": [
     "helloApp.hello"
   ],
@@ -12,7 +11,6 @@
     "hello.component.js",
     "hello.fiddle.js"
   ],
-  "imports": [],
   "css": [],
   "copy": []
 }

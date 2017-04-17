@@ -4,13 +4,15 @@
 [![downloads](https://img.shields.io/npm/dt/cumulocity-hello-plugin-modular.svg)](http://npm-stat.com/charts.html?package=cumulocity-hello-plugin-modular)
 [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/dwiyatci/cumulocity-hello-plugin-modular/master/LICENSE.txt)
 
+#### *** Heads-up! Since version 2.X, this Cumulocity UI plugin boilerplate is written in ES6+. :tada: ***
+
 A boilerplate to start writing Cumulocity UI plugin with a taste of [modular](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure) structure.
 
 ### Why?
 This boilerplate is basically a twin of [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and a sibling to [cumulocity-smart-apps-webpack](https://github.com/dwiyatci/cumulocity-smart-apps-webpack): it exists for similar reasons. ;)
 
 ## Installation
-* Make sure you have Node.js ≥ v6.9.0 installed and npm from its [website](https://nodejs.org), or better even, use [nvm](https://github.com/creationix/nvm).
+* Make sure you have Node.js ≥ v6.10.0 installed and npm from its [website](https://nodejs.org), or better even, use [nvm](https://github.com/creationix/nvm).
 
 * Clone the repo, `cd` to your project directory, and setup dependencies:
 
