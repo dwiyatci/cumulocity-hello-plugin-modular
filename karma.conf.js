@@ -10,8 +10,16 @@ const APP_CONTEXT_PATH = process.argv[4] || 'myapplication';
 
 const pluginJsFiles = _(glob.sync('plugins/**/*/cumulocity.json'))
   .flatMap(manifestFile =>
-    _.map(readJsonSync(manifestFile).js, jsFile =>
-      join(dirname(manifestFile), jsFile)))
+    _.map(readJsonSync(manifestFile).js, (jsFile) => {
+      let baseDir = dirname(manifestFile);
+
+      if (jsFile.match(/^(node_modules|bower_components)/i)) {
+        baseDir = join(baseDir, '../..');
+      }
+
+      return join(baseDir, jsFile);
+    })
+  )
   .compact()
   .value();
 
@@ -22,7 +30,7 @@ module.exports = (config) => {
 
     files: [
       'node_modules/babel-polyfill/dist/polyfill.js',
-      'node_modules/cumulocity-ui-build/core/main.js',
+      'node_modules/cumulocity-ui-build/core{,_*}/main.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/tentacle.js/dist/tentacle.js',
@@ -53,7 +61,11 @@ module.exports = (config) => {
     },
     babelPreprocessor: {
       options: {
-        presets: [['env', { debug: false }]]
+        presets: [
+          ['env', {
+            debug: false
+          }]
+        ]
       }
     },
 
