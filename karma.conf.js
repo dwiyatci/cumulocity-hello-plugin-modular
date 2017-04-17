@@ -46,6 +46,7 @@ module.exports = (config) => {
     ],
 
     preprocessors: {
+      'test-helper.js': ['babel'],
       // Match files in all plugins subfolders except vendor/
       'plugins/*/{*.js,!(vendor)/**/*.js}': ['c8y-pluginpath', 'babel'],
       'plugins/**/*.html': ['ng-html2js']
