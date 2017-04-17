@@ -31,8 +31,6 @@ describe('helloapp.hello: c8yHello component', () => {
   });
 
   describe('displaying text', () => {
-    let element;
-
     beforeEach(() => {
       //////////// stubbing dependencies
 
@@ -64,11 +62,11 @@ describe('helloapp.hello: c8yHello component', () => {
 
     it('you should compile the component instead if use case getting too complex', () => {
       // given
+      const template = '<c8y-hello world="world" />';
       const bindings = { world: 'world' };
-      const template = '<c8y-hello world="world"></c8y-hello>';
 
       // when
-      initComponent(template, bindings);
+      const element = createComponent(template, bindings);
 
       // then
       expect(element.html())
@@ -77,11 +75,13 @@ describe('helloapp.hello: c8yHello component', () => {
         .toEqual('hello, world');
     });
 
-    function initComponent(template, bindings) {
+    function createComponent(template, bindings) {
       const $scope = _.assign($rootScope.$new(), bindings);
 
-      element = $compile(template)($scope);
-      $scope.$digest();
+      const element = $compile(template)($scope);
+      $scope.$apply();
+
+      return element;
     }
   });
 });

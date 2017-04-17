@@ -19,9 +19,7 @@
   function Controller() {
     const vm = this;
 
-    _.assign(vm, {
-      $onInit: onInit
-    });
+    vm.$onInit = onInit;
 
     ////////////
 
