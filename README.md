@@ -12,7 +12,7 @@ A boilerplate to start writing Cumulocity UI plugin with a taste of [modular](ht
 This boilerplate is basically a twin of [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and a sibling to [cumulocity-smart-apps-webpack](https://github.com/dwiyatci/cumulocity-smart-apps-webpack): it exists for similar reasons. ;)
 
 ## Installation
-* Make sure you have Node.js ≥ v6.10.0 installed and npm from its [website](https://nodejs.org), or better even, use [nvm](https://github.com/creationix/nvm).
+* Make sure you have Node.js ≥ v6.11.0 installed and npm from its [website](https://nodejs.org), or better even, use [nvm](https://github.com/creationix/nvm).
 
 * Clone the repo, `cd` to your project directory, and setup dependencies:
 
