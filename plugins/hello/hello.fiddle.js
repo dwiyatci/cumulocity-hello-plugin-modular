@@ -13,10 +13,12 @@
   function runBlock(
     c8ySystem
   ) {
-    printUiVersion().then(() => {
+    (async () => {
+      await printUiVersion();
+
       // Put your fiddle code here.
       console.log('hello, world');
-    });
+    })();
 
     async function printUiVersion() {
       const version = await c8ySystem.getUIVersion();
