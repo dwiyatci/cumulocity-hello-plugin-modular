@@ -3,6 +3,8 @@
  */
 
 describe('helloapp.hello: c8yHello component', () => {
+  'use strict';
+
   let $injector;
   let $rootScope;
   let $compile;
@@ -12,19 +14,17 @@ describe('helloapp.hello: c8yHello component', () => {
     common.globalBeforeWithUI();
     module('helloApp.hello');
 
-    inject(
-      (
-        _$injector_,
-        _$rootScope_,
-        _$compile_,
-        _$componentController_
-      ) => {
-        $injector = _$injector_;
-        $rootScope = _$rootScope_;
-        $compile = _$compile_;
-        $componentController = _$componentController_;
-      }
-    );
+    inject((
+      _$injector_,
+      _$rootScope_,
+      _$compile_,
+      _$componentController_,
+    ) => {
+      $injector = _$injector_;
+      $rootScope = _$rootScope_;
+      $compile = _$compile_;
+      $componentController = _$componentController_;
+    });
   });
 
   it('component should exist', () => {

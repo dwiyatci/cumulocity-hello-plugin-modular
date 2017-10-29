@@ -10,10 +10,10 @@
     .component('c8yHello', {
       templateUrl: ':::PLUGIN_PATH:::/hello.html',
       bindings: {
-        text: '@'
+        text: '@',
       },
+      controllerAs: 'vm',
       controller: Controller,
-      controllerAs: 'vm'
     });
 
   function Controller() {
