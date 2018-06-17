@@ -4,7 +4,6 @@
   "key": "helloapp-application-key",
   "imports": [
     "core/c8yBranding",
-    "core/babel-polyfill",
     "helloapp/hello"
   ]
 }
