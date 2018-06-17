@@ -14,12 +14,7 @@ describe('helloapp.hello: c8yHello component', () => {
     common.globalBeforeWithUI();
     module('helloApp.hello');
 
-    inject((
-      _$injector_,
-      _$rootScope_,
-      _$compile_,
-      _$componentController_,
-    ) => {
+    inject((_$injector_, _$rootScope_, _$compile_, _$componentController_) => {
       $injector = _$injector_;
       $rootScope = _$rootScope_;
       $compile = _$compile_;
@@ -28,14 +23,12 @@ describe('helloapp.hello: c8yHello component', () => {
   });
 
   it('component should exist', () => {
-    expect($injector.has('c8yHelloDirective'))
-      .toEqual(true);
+    expect($injector.has('c8yHelloDirective')).toEqual(true);
   });
 
   describe('displaying text', () => {
     beforeEach(() => {
       //////////// stubbing dependencies
-
     });
 
     it('should display "hello, world" by default', () => {
@@ -54,12 +47,13 @@ describe('helloapp.hello: c8yHello component', () => {
 
     function testDisplayingText(textBinding, expectedText) {
       // when
-      const controller = $componentController('c8yHello', undefined, { text: textBinding });
+      const controller = $componentController('c8yHello', undefined, {
+        text: textBinding
+      });
       controller.$onInit();
 
       // then
-      expect(controller.text)
-        .toEqual(expectedText);
+      expect(controller.text).toEqual(expectedText);
     }
 
     it('you should compile the component instead if use case getting too complex', () => {
@@ -71,10 +65,8 @@ describe('helloapp.hello: c8yHello component', () => {
       const element = createComponent(template, bindings);
 
       // then
-      expect(element.html())
-        .toContain('hello');
-      expect(element.controller('c8yHello').text)
-        .toEqual('hello, world');
+      expect(element.html()).toContain('hello');
+      expect(element.controller('c8yHello').text).toEqual('hello, world');
     });
 
     function createComponent(template, bindings) {

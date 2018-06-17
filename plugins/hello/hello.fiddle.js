@@ -2,12 +2,10 @@
  * Created by glenn on 15.08.16.
  */
 
-(function () {
+(() => {
   'use strict';
 
-  angular
-    .module('helloApp.hello')
-    .run(runBlock);
+  angular.module('helloApp.hello').run(runBlock);
 
   /* @ngInject */
   function runBlock(c8ySystem) {
@@ -24,4 +22,4 @@
       console.log(`Cumulocity UI version: ${version}`);
     }
   }
-}());
+})();
