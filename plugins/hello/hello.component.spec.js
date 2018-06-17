@@ -12,13 +12,13 @@ describe('helloapp.hello: c8yHello component', () => {
 
   beforeEach(() => {
     common.globalBeforeWithUI();
-    module('helloApp.hello');
+    angular.mock.module('helloApp.hello');
 
-    inject((_$injector_, _$rootScope_, _$compile_, _$componentController_) => {
+    inject(_$injector_ => {
       $injector = _$injector_;
-      $rootScope = _$rootScope_;
-      $compile = _$compile_;
-      $componentController = _$componentController_;
+      $rootScope = $injector.get('$rootScope');
+      $compile = $injector.get('$compile');
+      $componentController = $injector.get('$componentController');
     });
   });
 
@@ -58,7 +58,7 @@ describe('helloapp.hello: c8yHello component', () => {
 
     it('you should compile the component instead if use case getting too complex', () => {
       // given
-      const template = '<c8y-hello world="world" />';
+      const template = '<c8y-hello world="world"></c8y-hello>';
       const bindings = { world: 'world' };
 
       // when

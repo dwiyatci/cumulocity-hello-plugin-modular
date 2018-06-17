@@ -32,7 +32,6 @@
     "clean:tmp": "rimraf _build_for_deploy",
     "lint": "eslint --cache",
     "test": "karma start --",
-    "help": "karma start --help",
     "prettier": "prettier --write"
   },
   "dependencies": {
