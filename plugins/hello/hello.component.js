@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('helloApp.hello').component('c8yHello', {
-    template: '<div>{{vm.text}}</div>',
+    templateUrl: ':::PLUGIN_PATH:::/hello.component.html',
     bindings: {
       text: '@'
     },

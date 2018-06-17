@@ -17,7 +17,7 @@
     });
 
     c8yViewsProvider.when('/hello', {
-      templateUrl: ':::PLUGIN_PATH:::/main.html'
+      template: '<c8y-hello text="halo, dunia"></c8y-hello>'
     });
   }
 })();
