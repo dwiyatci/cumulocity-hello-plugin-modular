@@ -5,32 +5,13 @@
 describe('helloapp.hello: c8yHello component', () => {
   'use strict';
 
-  let $injector;
-  let $rootScope;
-  let $compile;
-  let $componentController;
-
-  beforeEach(() => {
-    common.globalBeforeWithUI();
-    angular.mock.module('helloApp.hello');
-
-    inject(_$injector_ => {
-      $injector = _$injector_;
-      $rootScope = $injector.get('$rootScope');
-      $compile = $injector.get('$compile');
-      $componentController = $injector.get('$componentController');
-    });
-  });
-
   it('component should exist', () => {
+    const { $injector } = setup();
+
     expect($injector.has('c8yHelloDirective')).toEqual(true);
   });
 
   describe('displaying text', () => {
-    beforeEach(() => {
-      //////////// stubbing dependencies
-    });
-
     it('should display "hello, world" by default', () => {
       // given
       const textBinding = undefined;
@@ -46,6 +27,8 @@ describe('helloapp.hello: c8yHello component', () => {
     });
 
     function testDisplayingText(textBinding, expectedText) {
+      const { $componentController } = setup();
+
       // when
       const controller = $componentController('c8yHello', undefined, {
         text: textBinding
@@ -70,6 +53,7 @@ describe('helloapp.hello: c8yHello component', () => {
     });
 
     function createComponent(template, bindings) {
+      const { $rootScope, $compile } = setup();
       const $scope = _.assign($rootScope.$new(), bindings);
 
       const element = $compile(template)($scope);
@@ -78,4 +62,20 @@ describe('helloapp.hello: c8yHello component', () => {
       return element;
     }
   });
+
+  function setup() {
+    const setupVariables = {};
+
+    common.globalBeforeWithUI();
+    angular.mock.module('helloApp.hello');
+
+    inject(($injector) => _.assign(setupVariables, {
+      $injector,
+      $rootScope: $injector.get('$rootScope'),
+      $compile: $injector.get('$compile'),
+      $componentController: $injector.get('$componentController')
+    }));
+
+    return setupVariables;
+  }
 });

@@ -15,12 +15,11 @@ globals:
   module: false
   inject: false
   sinon: false
-  tentacle: false
   async: true
   common: true
 extends:
-  - airbnb-base
-  - prettier
+- airbnb-base
+- prettier
 parserOptions:
   sourceType: script
 rules:
@@ -63,10 +62,10 @@ rules:
   - error
   - peerDependencies: true
 overrides:
-  - files:
-    - karma.conf.js
-    - preinstall.js
-    excludedFiles:
-    - test-helper.js
-    parserOptions:
-      sourceType: module
+- files:
+  - karma.conf.js
+  - preinstall.js
+  excludedFiles:
+  - test-helper.js
+  parserOptions:
+    sourceType: module
